@@ -10,9 +10,9 @@ provider:
   runtime: nodejs10
 
 functions:
-  hello:
-    handler: src/api/hello/handler.post
+  contact:
+    handler: src/api/contact/handler.post
     events:
       - http:
           method: post
-          path: hello
+          path: contact

@@ -3,7 +3,9 @@ module.exports = api => {
     '@babel/preset-env',
     '@babel/preset-react',
   ];
-  const plugins = [];
+  const plugins = [
+    '@babel/plugin-transform-runtime',
+  ];
 
   api.cache(true);
 
