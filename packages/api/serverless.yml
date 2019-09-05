@@ -1,0 +1,18 @@
+service:
+  name: forms-api
+
+plugins:
+  - serverless-offline
+
+provider:
+  name: aws
+  profile: andismith
+  runtime: nodejs10
+
+functions:
+  hello:
+    handler: src/api/hello/handler.post
+    events:
+      - http:
+          method: post
+          path: hello

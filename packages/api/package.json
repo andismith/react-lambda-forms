@@ -8,14 +8,13 @@
     "node": ">=10"
   },
   "license": "MIT",
-  "name": "react-lambda-forms",
+  "name": "forms-api",
   "private": true,
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/andismith/react-lambda-forms"
+  "scripts": {
+    "offline": "sls offline"
   },
   "version": "1.0.0",
-  "workspaces": [
-    "packages/*"
-  ]
+  "dependencies": {
+    "serverless-offline": "^5.10.1"
+  }
 }
