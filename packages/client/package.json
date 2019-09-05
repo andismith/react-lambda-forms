@@ -10,7 +10,10 @@
     "@babel/preset-react": "^7.0.0",
     "@babel/runtime": "^7.5.5",
     "babel-loader": "^8.0.6",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
     "html-webpack-plugin": "^3.2.0",
+    "jest": "^24.9.0",
     "webpack": "^4.39.3",
     "webpack-cli": "^3.3.8",
     "webpack-dev-server": "^3.8.0"
@@ -18,6 +21,9 @@
   "license": "MIT",
   "name": "forms-client",
   "scripts": {
+    "jest": "jest",
+    "jest:coverage": "jest --collectCoverage=true",
+    "jest:watch": "jest --watch",
     "start": "webpack-dev-server --open --mode development"
   },
   "version": "1.0.0"
