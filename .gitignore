@@ -1,0 +1,36 @@
+# Ignore the following files
+
+# Environment variables files
+.env
+.env.yml
+
+# Module folders
+node_modules
+
+# Cache files and folders
+*.cache
+.eslintcache
+.npm
+.sass-cache/
+.serverless
+.webpack
+
+# SSL files
+cert.pem
+key.pem
+
+# Build folders
+dist
+
+# Log files
+*.log
+
+# Test suite files
+coverage/
+
+# IDE files
+.idea
+
+# System files
+.DS_Store
+Thumbs.db
