@@ -1,3 +1,3 @@
 module.exports = {
-  '*': ['jest --bail --passWithNoTests', 'git add'],
+  '*': ['pretty-quick --staged', 'jest --bail --passWithNoTests', 'git add'],
 };
