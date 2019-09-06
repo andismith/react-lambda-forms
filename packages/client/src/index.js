@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import ContactForm from './containers/ContactForm/ContactForm';
+import ContactPage from './pages/ContactPage/ContactPage';
 
-ReactDOM.render(<ContactForm />, document.getElementById('app'));
+ReactDOM.render(<ContactPage />, document.getElementById('app'));
