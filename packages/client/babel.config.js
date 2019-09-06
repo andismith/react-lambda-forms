@@ -4,6 +4,7 @@ module.exports = api => {
     '@babel/preset-react',
   ];
   const plugins = [
+    '@babel/plugin-proposal-class-properties',
     '@babel/plugin-transform-runtime',
   ];
 
