@@ -24,9 +24,7 @@ describe('Form component', () => {
   it('renders a submitted message when supplied', () => {
     const mockMessage = 'Mock Message';
     const wrapper = shallow(<Form submittedMessage={mockMessage} />);
-    expect(wrapper.find('.submittedMessage').text()).toBe(
-      'Result: ' + mockMessage
-    );
+    expect(wrapper.find('.message').text()).toBe('Result: ' + mockMessage);
   });
 
   it('renders a field when supplied', () => {

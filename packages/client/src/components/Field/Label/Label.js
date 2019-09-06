@@ -1,9 +1,11 @@
 import React from 'react';
 import capitalizeFirstLetter from '../../../utils/capitalizeFirstLetter';
 
+import styles from './Label.module.scss';
+
 const Label = ({ id, name, title }) => {
   return (
-    <label htmlFor={id || name}>
+    <label className={styles.label} htmlFor={id || name}>
       {title || capitalizeFirstLetter(name)}
     </label>
   );

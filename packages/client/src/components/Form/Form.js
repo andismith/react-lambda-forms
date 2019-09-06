@@ -1,6 +1,9 @@
 import React from 'react';
+
 import Field from '../Field/Field';
 import useForm from './useForm';
+
+import styles from './Form.module.scss';
 
 const components = {
   text: Field.Input,
@@ -25,7 +28,11 @@ const renderFields = (fields, values, handleChange, isDisabled) =>
 
 const renderButtons = buttons =>
   (buttons || []).map(button => (
-    <button key={`button-${button.text}`} type={button.type}>
+    <button
+      className={styles.button}
+      key={`button-${button.text}`}
+      type={button.type}
+    >
       {button.text}
     </button>
   ));
@@ -44,14 +51,15 @@ const Form = ({
   );
 
   return (
-    <form method="post" onSubmit={handleButton}>
+    <form className={styles.form} method="post" onSubmit={handleButton}>
       <h1>{title}</h1>
-      <p className="description">{description}</p>
+      <p className={styles.description}>{description}</p>
       {submittedMessage && (
-        <p className="submittedMessage">Result: {submittedMessage}</p>
+        <p className={styles.message}>Result: {submittedMessage}</p>
       )}
 
-      {renderFields(fields, values, handleChange, hasSubmitted)}
+      <div>{renderFields(fields, values, handleChange, hasSubmitted)}</div>
+
       {renderButtons(buttons)}
     </form>
   );

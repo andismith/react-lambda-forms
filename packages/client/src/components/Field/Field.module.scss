@@ -1,0 +1,17 @@
+@import './../../styles/helpers';
+
+.container {
+  border: none;
+  border-top: dotted 1px color(grey);
+  padding-top: 10px;
+
+  &:last-child {
+    border-bottom: dotted 1px color(grey);
+    padding-bottom: 10px;
+  }
+}
+
+.field {
+  align-items: center;
+  display: flex;
+}

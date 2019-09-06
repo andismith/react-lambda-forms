@@ -3,6 +3,8 @@ import React from 'react';
 import Input from './Input/Input';
 import Label from './Label/Label';
 
+import styles from './Field.module.scss';
+
 class Field extends React.Component {
   static displayName = 'Field';
 
@@ -11,8 +13,8 @@ class Field extends React.Component {
 
   render() {
     return (
-      <fieldset>
-        <div>{this.props.children}</div>
+      <fieldset className={styles.container}>
+        <div className={styles.field}>{this.props.children}</div>
       </fieldset>
     );
   }

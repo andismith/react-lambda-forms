@@ -1,0 +1,9 @@
+@import './../../../styles/helpers';
+
+.input {
+  border: solid 1px color(grey);
+  font: inherit;
+  max-width: 340px;
+  padding: 5px;
+  width: 100%;
+}
