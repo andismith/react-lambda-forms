@@ -1,6 +1,6 @@
 import React from 'react';
 
-import config from './../../../../shared/config/contact';
+import config from 'forms-shared/config/contact';
 
 import FormContainer from './../../containers/FormContainer/FormContainer';
 
