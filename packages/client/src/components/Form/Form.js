@@ -1,18 +1,24 @@
 import React from 'react';
 import Field from '../Field/Field';
+import useForm from './useForm';
 
 const components = {
   text: Field.Input,
 };
 
-const renderFields = fields =>
+const renderFields = (fields, values, handleChange, isDisabled) =>
   (fields || []).map(field => {
     const Component = components[field.type];
 
     return (
       <Field key={`input-${field.name}`}>
         <Field.Label {...field} />
-        <Component {...field} />
+        <Component
+          handleChange={handleChange}
+          isDisabled={isDisabled}
+          value={values[field.name] || ''}
+          {...field}
+        />
       </Field>
     );
   });
@@ -31,18 +37,25 @@ const Form = ({
   handleSubmit,
   submittedMessage,
   title,
-}) => (
-  <form method="post" onSubmit={handleSubmit}>
-    <h1>{title}</h1>
-    <p className="description">{description}</p>
-    {submittedMessage && (
-      <p className="submittedMessage">Result: {submittedMessage}</p>
-    )}
+}) => {
+  const { handleButton, handleChange, hasSubmitted, values } = useForm(
+    {},
+    handleSubmit
+  );
 
-    {renderFields(fields)}
-    {renderButtons(buttons)}
-  </form>
-);
+  return (
+    <form method="post" onSubmit={handleButton}>
+      <h1>{title}</h1>
+      <p className="description">{description}</p>
+      {submittedMessage && (
+        <p className="submittedMessage">Result: {submittedMessage}</p>
+      )}
+
+      {renderFields(fields, values, handleChange, hasSubmitted)}
+      {renderButtons(buttons)}
+    </form>
+  );
+};
 
 Form.displayName = 'Form';
 
