@@ -6,8 +6,8 @@ import { post } from './../../utils/fetch';
 
 const FormContainer = ({ endpoint, ...config }) => {
   const [state, setState] = useState({ message: '' });
-  const handleSubmit = async () => {
-    const result = await post(endpoint);
+  const handleSubmit = async values => {
+    const result = await post(endpoint, values);
     setState(result);
   };
 
