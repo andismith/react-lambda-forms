@@ -14,26 +14,19 @@ const Input = ({
   value,
 }) => {
   return (
-    <div className={styles.container}>
-      <input
-        autoComplete={autoComplete}
-        className={classNames(
-          styles.input,
-          errors && errors.length && styles.error
-        )}
-        disabled={isDisabled}
-        id={id || name}
-        name={name}
-        onChange={handleChange}
-        type={type}
-        value={value}
-      />
-      {(errors || []).map(error => (
-        <span className={styles.message} key={error.message}>
-          {error.message}
-        </span>
-      ))}
-    </div>
+    <input
+      autoComplete={autoComplete}
+      className={classNames(
+        styles.input,
+        errors && errors.length && styles.error
+      )}
+      disabled={isDisabled}
+      id={id || name}
+      name={name}
+      onChange={handleChange}
+      type={type}
+      value={value}
+    />
   );
 };
 

@@ -26,7 +26,12 @@ export default {
     },
     {
       name: 'message',
-      type: 'text',
+      type: 'textarea',
+      validation: {
+        isRequired: true,
+        maxLength: 150,
+        minLength: 20,
+      },
     },
   ],
   title: 'Contact us',

@@ -8,6 +8,7 @@ import styles from './Form.module.scss';
 const components = {
   email: Field.Input,
   text: Field.Input,
+  textarea: Field.TextArea,
 };
 
 const renderFields = (fields, values, errors, handleChange, isDisabled) =>
@@ -17,13 +18,16 @@ const renderFields = (fields, values, errors, handleChange, isDisabled) =>
     return (
       <Field key={`input-${field.name}`}>
         <Field.Label {...field} />
-        <Component
-          errors={errors[field.name]}
-          handleChange={handleChange}
-          isDisabled={isDisabled}
-          value={values[field.name] || ''}
-          {...field}
-        />
+        <div className={styles.input}>
+          <Component
+            errors={errors[field.name]}
+            handleChange={handleChange}
+            isDisabled={isDisabled}
+            value={values[field.name] || ''}
+            {...field}
+          />
+          <Field.ErrorMessage errors={errors[field.name]} />
+        </div>
       </Field>
     );
   });
