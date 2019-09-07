@@ -18,7 +18,11 @@ export default {
     {
       name: 'email',
       title: 'Email address',
-      type: 'text',
+      type: 'email',
+      validation: {
+        isRequired: true,
+        isValidEmail: true,
+      },
     },
     {
       name: 'message',

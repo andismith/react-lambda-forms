@@ -10,6 +10,7 @@ const Input = ({
   id,
   isDisabled,
   name,
+  type,
   value,
 }) => {
   return (
@@ -24,6 +25,7 @@ const Input = ({
         id={id || name}
         name={name}
         onChange={handleChange}
+        type={type}
         value={value}
       />
       {(errors || []).map(error => (

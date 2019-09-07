@@ -6,6 +6,7 @@ import useForm from './useForm';
 import styles from './Form.module.scss';
 
 const components = {
+  email: Field.Input,
   text: Field.Input,
 };
 
