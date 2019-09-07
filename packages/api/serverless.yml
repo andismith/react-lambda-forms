@@ -2,6 +2,7 @@ service:
   name: forms-api
 
 plugins:
+  - serverless-webpack
   - serverless-offline
 
 provider:
