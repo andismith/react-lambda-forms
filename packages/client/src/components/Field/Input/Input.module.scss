@@ -1,9 +1,21 @@
 @import './../../../styles/helpers';
 
+.container {
+  flex: 1;
+}
+
 .input {
   border: solid 1px color(grey);
   font: inherit;
-  max-width: 340px;
   padding: 5px;
   width: 100%;
+}
+
+.error {
+  border-color: color(red);
+}
+
+.message {
+  color: color(red);
+  display: block;
 }

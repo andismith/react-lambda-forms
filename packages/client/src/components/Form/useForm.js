@@ -1,15 +1,24 @@
 import { useState } from 'react';
 
-const useForm = (initialState, callback) => {
+import validateForm from 'forms-shared/src/utils/validation';
+
+const useForm = (initialState, callback, fields) => {
   const [values, setValues] = useState(initialState);
+  const [errors, setErrors] = useState({});
   const [hasSubmitted, setHasSubmitted] = useState(false);
 
   const handleButton = event => {
     if (event) {
       event.preventDefault();
     }
-    setHasSubmitted(true);
-    callback(values);
+
+    const validation = validateForm(fields, values);
+    setErrors(validation);
+
+    if (!Object.keys(validation).length) {
+      setHasSubmitted(true);
+      callback(values);
+    }
   };
 
   const handleChange = event => {
@@ -21,6 +30,7 @@ const useForm = (initialState, callback) => {
   };
 
   return {
+    errors,
     handleButton,
     handleChange,
     values,

@@ -1,6 +1,18 @@
 {
+  "devDependencies": {
+    "@babel/core": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
+    "jest": "^24.9.0",
+    "lint-staged": "^9.2.5"
+  },
   "license": "MIT",
   "name": "forms-shared",
   "private": true,
+  "scripts": {
+    "jest": "jest",
+    "jest:coverage": "jest --collectCoverage=true",
+    "jest:watch": "jest --watch",
+    "precommit": "lint-staged"
+  },
   "version": "1.0.0"
 }

@@ -11,6 +11,9 @@ export default {
     {
       name: 'name',
       type: 'text',
+      validation: {
+        isRequired: true,
+      },
     },
     {
       name: 'email',

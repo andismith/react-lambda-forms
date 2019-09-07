@@ -9,7 +9,7 @@ const components = {
   text: Field.Input,
 };
 
-const renderFields = (fields, values, handleChange, isDisabled) =>
+const renderFields = (fields, values, errors, handleChange, isDisabled) =>
   (fields || []).map(field => {
     const Component = components[field.type];
 
@@ -17,6 +17,7 @@ const renderFields = (fields, values, handleChange, isDisabled) =>
       <Field key={`input-${field.name}`}>
         <Field.Label {...field} />
         <Component
+          errors={errors[field.name]}
           handleChange={handleChange}
           isDisabled={isDisabled}
           value={values[field.name] || ''}
@@ -45,9 +46,10 @@ const Form = ({
   submittedMessage,
   title,
 }) => {
-  const { handleButton, handleChange, hasSubmitted, values } = useForm(
+  const { errors, handleButton, handleChange, hasSubmitted, values } = useForm(
     {},
-    handleSubmit
+    handleSubmit,
+    fields
   );
 
   return (
@@ -58,7 +60,9 @@ const Form = ({
         <p className={styles.message}>Result: {submittedMessage}</p>
       )}
 
-      <div>{renderFields(fields, values, handleChange, hasSubmitted)}</div>
+      <div>
+        {renderFields(fields, values, errors, handleChange, hasSubmitted)}
+      </div>
 
       {renderButtons(buttons)}
     </form>

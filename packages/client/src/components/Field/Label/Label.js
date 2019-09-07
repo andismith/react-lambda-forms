@@ -1,5 +1,5 @@
 import React from 'react';
-import capitalizeFirstLetter from '../../../utils/capitalizeFirstLetter';
+import capitalizeFirstLetter from 'forms-shared/src/utils/capitalizeFirstLetter';
 
 import styles from './Label.module.scss';
 
