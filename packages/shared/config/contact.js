@@ -25,6 +25,14 @@ export default {
       },
     },
     {
+      name: 'password',
+      type: 'password',
+      validation: {
+        isRequired: true,
+        minLength: 10,
+      },
+    },
+    {
       name: 'message',
       type: 'textarea',
       validation: {

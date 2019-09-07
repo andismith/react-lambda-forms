@@ -7,6 +7,7 @@ import styles from './Form.module.scss';
 
 const components = {
   email: Field.Input,
+  password: Field.Password,
   text: Field.Input,
   textarea: Field.TextArea,
 };
