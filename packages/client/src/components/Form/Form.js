@@ -1,5 +1,6 @@
 import React from 'react';
 
+import Button from '../Button/Button';
 import Field from '../Field/Field';
 
 import styles from './Form.module.scss';
@@ -35,14 +36,7 @@ const renderFields = (fields, values, errors, handleChange, isDisabled) =>
 
 const renderButtons = (buttons, isDisabled) =>
   (buttons || []).map(button => (
-    <button
-      className={styles.button}
-      disabled={isDisabled}
-      key={`button-${button.text}`}
-      type={button.type}
-    >
-      {button.text}
-    </button>
+    <Button isDisabled={isDisabled} key={`button-${button.text}`} {...button} />
   ));
 
 const Form = ({

@@ -36,12 +36,6 @@ describe('Form component', () => {
     expect(wrapper.find('Input').exists()).toBe(true);
   });
 
-  it('renders a button with type "submit" when supplied', () => {
-    const mockButton = [{ text: 'submit', type: 'submit' }];
-    const wrapper = shallow(<Form buttons={mockButton} />);
-    expect(wrapper.find('button[type="submit"]').exists()).toBe(true);
-  });
-
   it('calls the passed submit function when the form is submitted', () => {
     const mockSubmit = jest.fn(() => {});
     const wrapper = shallow(<Form handleSubmit={mockSubmit} />);
