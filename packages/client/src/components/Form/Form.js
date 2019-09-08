@@ -9,6 +9,7 @@ const components = {
   checkbox: Field.CheckBox,
   email: Field.Input,
   password: Field.Password,
+  select: Field.Select,
   text: Field.Input,
   textarea: Field.TextArea,
 };

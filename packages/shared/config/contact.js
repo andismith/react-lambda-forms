@@ -5,7 +5,7 @@ export default {
       type: 'submit',
     },
   ],
-  description: 'Contact us via this form!',
+  description: `Example contact us form`,
   endpoint: 'contact',
   fields: [
     {
@@ -39,6 +39,27 @@ export default {
         isRequired: true,
         maxLength: 150,
         minLength: 20,
+      },
+    },
+    {
+      name: 'query',
+      options: [
+        {
+          value: 'GENERAL',
+          title: 'General',
+        },
+        {
+          value: 'ENQUIRY',
+          title: 'Specific Enquiry',
+        },
+        {
+          value: 'QUESTION',
+          title: 'Question for Andi',
+        },
+      ],
+      type: 'select',
+      validation: {
+        isRequired: true,
       },
     },
     {
