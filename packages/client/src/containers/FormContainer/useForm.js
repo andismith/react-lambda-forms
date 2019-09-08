@@ -9,7 +9,7 @@ const useForm = (initialState, callback, fields) => {
   const [hasSubmitted, setHasSubmitted] = useState(false);
   const [hasTriedToSubmit, setHasTriedToSubmit] = useState(false);
 
-  const handleButton = event => {
+  const handleFormSubmit = async event => {
     if (event) {
       event.preventDefault();
     }
@@ -51,10 +51,12 @@ const useForm = (initialState, callback, fields) => {
 
   return {
     errors,
-    handleButton,
+    handleFormSubmit,
     handleChange,
-    values,
     hasSubmitted,
+    setErrors,
+    setHasSubmitted,
+    values,
   };
 };
 

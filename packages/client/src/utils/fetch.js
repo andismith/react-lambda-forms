@@ -7,5 +7,8 @@ export const post = async (url, data) => {
     'Content-Type': 'application/json',
   });
 
-  return response.json();
+  return {
+    success: response.status === 200,
+    ...(await response.json()),
+  };
 };

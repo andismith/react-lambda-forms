@@ -1,7 +1,6 @@
 import React from 'react';
 
 import Field from '../Field/Field';
-import useForm from './useForm';
 
 import styles from './Form.module.scss';
 
@@ -34,10 +33,11 @@ const renderFields = (fields, values, errors, handleChange, isDisabled) =>
     );
   });
 
-const renderButtons = buttons =>
+const renderButtons = (buttons, isDisabled) =>
   (buttons || []).map(button => (
     <button
       className={styles.button}
+      disabled={isDisabled}
       key={`button-${button.text}`}
       type={button.type}
     >
@@ -48,30 +48,26 @@ const renderButtons = buttons =>
 const Form = ({
   buttons,
   description,
+  errors,
   fields,
+  handleChange,
   handleSubmit,
-  submittedMessage,
+  hasSubmitted,
+  submitStatus,
   title,
+  values,
 }) => {
-  const { errors, handleButton, handleChange, hasSubmitted, values } = useForm(
-    {},
-    handleSubmit,
-    fields
-  );
-
   return (
-    <form className={styles.form} method="post" onSubmit={handleButton}>
+    <form className={styles.form} method="post" onSubmit={handleSubmit}>
       <h1>{title}</h1>
       <p className={styles.description}>{description}</p>
-      {submittedMessage && (
-        <p className={styles.message}>Result: {submittedMessage}</p>
-      )}
+      {submitStatus && <p className={styles.message}>Result: {submitStatus}</p>}
 
       <div>
         {renderFields(fields, values, errors, handleChange, hasSubmitted)}
       </div>
 
-      {renderButtons(buttons)}
+      {renderButtons(buttons, hasSubmitted)}
     </form>
   );
 };

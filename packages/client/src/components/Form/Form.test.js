@@ -23,13 +23,15 @@ describe('Form component', () => {
 
   it('renders a submitted message when supplied', () => {
     const mockMessage = 'Mock Message';
-    const wrapper = shallow(<Form submittedMessage={mockMessage} />);
+    const wrapper = shallow(<Form submitStatus={mockMessage} />);
     expect(wrapper.find('.message').text()).toBe('Result: ' + mockMessage);
   });
 
   it('renders a field when supplied', () => {
     const mockField = [{ name: 'name', type: 'text' }];
-    const wrapper = shallow(<Form fields={mockField} />);
+    const wrapper = shallow(
+      <Form fields={mockField} errors={{}} values={{}} />
+    );
     expect(wrapper.find('Label').exists()).toBe(true);
     expect(wrapper.find('Input').exists()).toBe(true);
   });
