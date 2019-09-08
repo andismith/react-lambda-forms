@@ -41,6 +41,14 @@ export default {
         minLength: 20,
       },
     },
+    {
+      name: 'terms',
+      type: 'checkbox',
+      validation: {
+        isRequired: true,
+      },
+      value: true,
+    },
   ],
   title: 'Contact us',
 };

@@ -1,0 +1,8 @@
+.wrapper {
+  composes: wrapper from './../Input/Input.module.scss';
+}
+
+.checkbox {
+  display: block;
+  margin: 10px 10px 10px 0;
+}

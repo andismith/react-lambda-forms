@@ -27,7 +27,11 @@ const useForm = (initialState, callback, fields) => {
   const handleChange = event => {
     event.persist();
     const fieldName = event.target.name;
-    const fieldValue = event.target.value;
+    let fieldValue = event.target.value;
+
+    if (event.target.type === 'checkbox') {
+      fieldValue = event.target.checked ? event.target.value : undefined;
+    }
 
     setValues(values => ({ ...values, [fieldName]: fieldValue }));
 

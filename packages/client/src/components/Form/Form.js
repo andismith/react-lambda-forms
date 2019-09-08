@@ -6,6 +6,7 @@ import useForm from './useForm';
 import styles from './Form.module.scss';
 
 const components = {
+  checkbox: Field.CheckBox,
   email: Field.Input,
   password: Field.Password,
   text: Field.Input,
